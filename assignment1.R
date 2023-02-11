@@ -25,14 +25,17 @@ View(housesales)
 # (note that because the column is numeric, you wouldn't use quotes as with text when setting your filter value)
 
 
+filter(housesales, year == 2015)
 
-
+#Using filter, I specified that I wanted to only see the housesales from 2015 with the above formula
 
 # 2) Similar to the above question, filter results from 2010 onward, so 2010-2015.
 
+filter(housesales, year >= 2010)
 
+sales_2010 <- filter(housesales, year >= 2010)
 
-
+#In order to see the sales from 2010-2015, I used the greater than (>) symbol along with the equals sign to indicate that I wanted to see the data from those years
 
 # 3) The "city" column contains the relevant city. Filter to return only results for Houston
 # (note, remember R is case sensitive)
