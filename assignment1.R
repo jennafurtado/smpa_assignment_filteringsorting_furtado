@@ -64,9 +64,11 @@ housesales%>%
 # 6) Piggyback on what you've done above. 
 # Do the same as #5, only this time instead of Houston return records for Dallas
 
+housesales %>% 
+  filter(city == "Dallas", year == 2010) %>% 
+  arrange(desc(sales))
 
-
-
+#Created a pipe, but for Dallas instead of Houston
 
 # 7) Sometimes metrics like home sales have a seasonal quality to them, much like 
 # retail sales. There are times of year that are naturally more active, and others where
@@ -77,25 +79,34 @@ housesales%>%
 #
 # Filter for the city is Dallas, and the month is June (the number 6). 
 
+filter(housesales, city == "Dallas", month == 6)
 
-
-
+#used similar filter, but specified only the month of June with double equals signs
 
 # 8) Build on what we've done above. Now that we have June numbers for Dallas for every year,
 # arrange the results by sales from highest-to-lowest to show what year had the highest June sales.
 
 
+housesales %>% 
+  filter(city == "Dallas", month == 6) %>% 
+  arrange(desc(sales))
 
-
+#Using a pipe, connected the filter and arrange to show which year had highest sales in June
 
 
 # 9) Now do the same as Question 8, but this time instead of Dallas, show results for Corpus Christi
 
 
+housesales %>% 
+  filter(city == "Corpus Christi", month == 6) %>% 
+  arrange(desc(sales))
 
-
-
+#Used same formula, replaced Corpus Christi with Dallas
 
 # 10) Finally, using the Corpus Christi code from Question 9, instead of June
 # use the month of February (2) instead.
 
+housesales %>% 
+  filter(city == "Corpus Christi", month == 2) %>% 
+  arrange(desc(sales))
+#Used same formula, but replaced 6 with 2 to indicate February
