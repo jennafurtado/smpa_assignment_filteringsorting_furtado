@@ -33,31 +33,33 @@ filter(housesales, year == 2015)
 
 filter(housesales, year >= 2010)
 
-sales_2010 <- filter(housesales, year >= 2010)
 
 #In order to see the sales from 2010-2015, I used the greater than (>) symbol along with the equals sign to indicate that I wanted to see the data from those years
 
 # 3) The "city" column contains the relevant city. Filter to return only results for Houston
 # (note, remember R is case sensitive)
 
+filter(housesales, city == "Houston")
 
-
-
+#Using filter, I specified that I only wanted to see sales from Houston, after briefly forgetting to put the word in quotation marks.
 
 # 4) Filter for only where the city is Houston as above, and now also filter for only 
 # the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
 
+filter(housesales, city == "Houston", year == 2010)
 
-
-
+#Combining year == and city == on the same line of code, I was able to filter for sales in Houston in 2010
 
 # 5) Build on what you've done above. Filter for only where the city is Houston as above, 
 # and the year is 2010. Now add a sort using arrange() to sort the results based on the number
 # of home sales (the "sales" column) from most to least.
 
 
+housesales%>% 
+  filter(city == "Houston", year == 2010) %>% 
+  arrange(desc(sales))
 
-
+#Since there were more steps, I decided to create a pipe to make it easier for myself in the future
 
 # 6) Piggyback on what you've done above. 
 # Do the same as #5, only this time instead of Houston return records for Dallas
