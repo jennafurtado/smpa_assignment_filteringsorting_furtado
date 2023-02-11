@@ -99,9 +99,10 @@ housesales %>%
 
 housesales %>% 
   filter(city == "Corpus Christi", month == 6) %>% 
-  arrange(desc(sales))
+  arrange(desc(sales)) 
 
-#Used same formula, replaced Corpus Christi with Dallas
+
+#Used same formula, replaced Corpus Christi with Dallas, added to the pipe
 
 # 10) Finally, using the Corpus Christi code from Question 9, instead of June
 # use the month of February (2) instead.
